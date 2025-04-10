@@ -192,6 +192,8 @@ a.card > div {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media (max-width: 480px) {
@@ -203,6 +205,9 @@ a.card > div {
   .prose > a.card  h3 {
     font-size: 1.875rem;
     line-height: 2.25rem;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
     
   }
 
