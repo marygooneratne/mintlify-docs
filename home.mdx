@@ -1,0 +1,28 @@
+---
+title: Loopscale Blog
+description: Updates, stories, and announcements from the Loopscale team
+mode: center
+---
+import {metadata} from '/snippets/constants.mdx'
+
+---
+
+<Card  title="Featured" img={metadata.featured.image} href={metadata.featured.href}>
+<div className="featured-content">
+  <h3 className="featured-titles">{metadata.featured.title}</h3>
+      <p className="featured-description">{metadata.featured.description}</p>
+
+    <p className="featured-date">{metadata.featured.date}</p>
+</div>
+    
+
+</Card>
+---
+## Recent
+<CardGroup cols={2}>
+  {
+  metadata.posts.map(({title, href, image}, i) => {
+      return <Card key={i} title={title}  img={image} href={href}> {metadata.featured.date} </Card>
+    })
+}
+</CardGroup>

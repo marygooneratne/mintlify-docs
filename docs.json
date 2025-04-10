@@ -1,102 +1,44 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Loopscale Blog",
+  "description": "Updates, stories, and announcements from the Loopscale team",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#276ED6",
+    "light": "#F8F9FB",
+    "dark": "#151619"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/static/assets/favicon.svg",
+  "icons": {
+    "library": "fontawesome"
+  },
+  "fonts": {
+    "family": "ABC Diatype Unlicensed Trial",
+    "source": "https://loopscale-site.s3.us-east-1.amazonaws.com/fonts/ABCDiatype-Regular-Trial.woff",
+    "format": "woff"
+  },
+  "appearance": { "default": "light", "strict": true },
   "navigation": {
-    "tabs": [
-      {
-        "tab": "LOOPSCALE",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "introduction",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "pages": ["home", {"group": "Posts", "pages":[ "posts/launch", "posts/structured-products","posts/flex-appeal","posts/modular-lending", "posts/closed-beta" ]}]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/static/assets/logo/light.svg",
+    "dark": "/static/assets/logo/dark.svg",
+    "href": "https://blog.loopscale.com"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Launch App",
+      "href": "https://app.loopscale.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/LoopscaleLabs",
+      "discord": "https://discord.gg/loopscale",
+      "linkedin": "https://linkedin.com/company/LoopscaleLabs",
+      "website": "https://loopscale.com"
     }
   }
 }
