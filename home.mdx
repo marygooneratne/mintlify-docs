@@ -3,26 +3,23 @@ title: Loopscale Blog
 description: Updates, stories, and announcements from the Loopscale team
 mode: center
 ---
-import {metadata} from '/snippets/constants.mdx'
 
 ---
 
-<Card  title="Featured" img={metadata.featured.image} href={metadata.featured.href}>
+<Card  title="Featured" img="/static/assets/images/structured-products.png" href={"/posts/structured-products"}>
 <div className="featured-content">
-  <h3 className="featured-titles">{metadata.featured.title}</h3>
-      <p className="featured-description">{metadata.featured.description}</p>
+  <h3 className="featured-titles">How Loopscale Powers DeFi Structured Products</h3>
+      <p className="featured-description">DeFi has dismissed order books as complex and resource-intensive. But order books create a more powerful lending experience than many existing primitives in DeFi today.</p>
 
-    <p className="featured-date">{metadata.featured.date}</p>
+    <p className="featured-date">February 26, 2025</p>
 </div>
     
-
 </Card>
+
 ---
 ## Recent
 <CardGroup cols={2}>
-  {
-  metadata.posts.map(({title, href, image}, i) => {
-      return <Card key={i} title={title}  img={image} href={href}> {metadata.featured.date} </Card>
-    })
-}
+<Card key={1} title= "Flex Appeal: Lending for Any Token" img="/static/assets/images/flex-appeal.png" href="/posts/flex-appeal">February 13, 2025 </Card>
+<Card key={2} title="Pool-based DeFi lending is inefficient by design. Here’s how Loopscale fixes it"  img="/static/assets/images/modular-lending.png" href="/posts/modular-lending">February 4, 2025 </Card>
+<Card key={3} title="Access the Loopscale Closed Beta"  img="/static/assets/images/closed-beta.png" href="/posts/closed-beta"> September 4, 2024</Card>
 </CardGroup>
