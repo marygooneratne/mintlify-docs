@@ -158,37 +158,31 @@ a.card:hover {
   background-color: transparent !important;
 }
 span > img {
-  border-radius: var(--rounded-2xl,1rem);
-
+  border-radius: var(--rounded-2xl, 1rem);
 }
 a.card > img {
-  border-radius: var(--rounded-2xl,1rem);
+  border-radius: var(--rounded-2xl, 1rem);
 }
 
 a.card > div {
-  padding-left:  0px !important;
-  padding-right:  0px !important;
-
-
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .prose > a.card {
   display: flex;
   align-items: center;
   flex-direction: column;
- 
 }
 .prose > hr:nth-of-type(2) {
-  display: none
+  display: none;
 }
-
 
 #navbar [class~="lg:hidden"] {
   display: none;
-
 }
 
-.prose > a.card  h3 {
+.prose > a.card h3 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -196,19 +190,22 @@ a.card > div {
   margin-bottom: 0px;
 }
 
+#pagination {
+  display: none !important;
+}
+
 @media (max-width: 480px) {
   #content-container > div.pt-40 {
     padding-top: 7.5rem;
   }
-  }
-@media(min-width:640px) {
-  .prose > a.card  h3 {
+}
+@media (min-width: 640px) {
+  .prose > a.card h3 {
     font-size: 1.875rem;
     line-height: 2.25rem;
 
-  margin-top: 0px;
-  margin-bottom: 0px;
-    
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   h1#page-title {
@@ -221,25 +218,21 @@ a.card > div {
   .prose > a.card {
     flex-direction: row;
     gap: 24px;
-
-
   }
   .prose > hr:first-of-type {
-    display: none
+    display: none;
   }
   .prose > hr:nth-of-type(2) {
-    display: block
+    display: block;
   }
-  .prose > a.card  img {
-    width: 60%
+  .prose > a.card img {
+    width: 60%;
   }
-
 }
-.prose > a.card  h2 {
-  font-size: .875rem;
+.prose > a.card h2 {
+  font-size: 0.875rem;
   line-height: 1.5rem;
   color: var(--brand-blue) !important;
-  
 }
 
 .featured-content {
@@ -249,7 +242,7 @@ a.card > div {
 }
 .featured-description {
   color: var(--brand-gray) !important;
-margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 a.card:not([target="_blank"]) .text-gray-400 svg {
