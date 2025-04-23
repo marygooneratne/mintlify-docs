@@ -1,0 +1,37 @@
+---
+title: "Loopscale Scales Price Infrastructure with Pyth"
+description: "April 24, 2025"
+mode: center
+---
+
+![](/static/assets/images/price-infra.png)
+
+Loopscale uniquely supports lending markets across over 100 assets on Solana, from Orca Whirlpool LP positions to native-staked SOL. Powering these markets requires price infrastructure that is both reliable and flexible across a wide range of asset types.
+
+This infrastructure is made possible through our integration with [Pyth Network](https://pyth.network).
+
+## Role of Oracles in Lending
+
+Every transaction on Loopscale relies on accurate pricing. Loan-to-value ratios, liquidation thresholds, and risk management are all tied to the integrity of the price feed. Loopscale uses both spot and exponential moving average (EMA) prices from Pyth, applying each based on the type of transaction being performed.
+
+For live loan activities (like borrowing more, withdrawing collateral, or modifying an LP position) Loopscale uses **EMA pricing**. This helps protect against price manipulation by smoothing out short-term volatility. A user can't exploit a temporary spike or dip in price to take out an unhealthy loan, because the EMA will lag slightly behind the spot price and reflect a more stable average.
+
+In contrast, Loopscale uses **spot pricing** for liquidations to reflect current market conditions as closely as possible. During sharp market moves, relying on a slower-moving EMA could result in stale prices that lag behind the market. This could make it harder to liquidate positions in time or at a fair value, increasing risk for lenders and liqudiators.
+
+Dynamic price infrastructure helps Loopscale maintain protocol safety while still enabling responsive, composable markets.
+
+## Pricing Across Asset Types
+
+Loopscale supports a broad range of tokens and financial primitives. While Pyth serves as base oracle for all digital-native assets on Loopscale, Loopscale applies additional logic depending on the asset class. For standard tokens like USDC, SOL, wBTC, JUP, and BONK, Loopscale uses Pyth price feeds directly. These are straightforward assets with deep liquidity and reliable oracle support.
+
+For liquid staking and restaking tokens like jitoSOL or jupSOL, Loopscale reads the underlying stake pool state to determine how much native SOL each token represents. We then apply the corresponding Pyth feed to value the base asset. This allows Loopscale to accurately price derivative assets while adapting to changes in stake pool composition over time.
+
+LP tokens from AMMs like Orca Whirlpool, Raydium CLMM, and Meteora DLMM are handled by parsing on-chain position data. Loopscale directly reads the token balances in the LP account, then fetches individual prices using Pyth to calculate the total position value. Prices update dynamically as positions are modified. LTV and liquidation thresholds are based on the minimum threshold between the assets in the pair.
+
+For perpetual LP tokens from protocols like Flash (FLP), Adrena (ALP), and Jupiter (JLP), Loopscale performs a on-chain read of the pool’s composition and assigns value to each balance using Pyth feeds. Risk parameters depend on this pricing as well as each pool’s redemption mechanics, protocol design, and underlying asset liquidity.
+
+Principal tokens from platforms like RateX and Exponent are priced by first determining their exchange rate to the base asset based on maturity or expiry. Loopscale then applies a discount to reflect the token’s pre-maturity value and converts that into a USD-denominated price using Pyth. This ensures that fixed-term tokens reflect both their real-time market price and their time-based value accrual.
+
+## Built for Scale
+
+Loopscale’s price infrastructure is designed to be modular, ensuring composability for new oracle providers and emerging asset classes. We integrate directly with Pyth for high-frequency, low-latency feeds. These feeds provide the foundation for our price infrastructure, which support a growing range of assets and risk models. By combining on-chain reads with this real-time pricing from Pyth, Loopscale can safely support a diverse range of asset classes and respond quickly to market changes.
