@@ -190,6 +190,13 @@ a.card > div {
   margin-bottom: 0px;
 }
 
+#featured-content
+  .prose
+  :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 #pagination {
   display: none !important;
 }
