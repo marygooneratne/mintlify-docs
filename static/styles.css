@@ -190,7 +190,8 @@ a.card > div {
   margin-bottom: 0px;
 }
 
-#featured-p > p {
+#featured-p > p,
+#featured-p.p {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
@@ -247,7 +248,7 @@ a.card > div {
 }
 .featured-description {
   color: var(--brand-gray) !important;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 a.card:not([target="_blank"]) .text-gray-400 svg {
