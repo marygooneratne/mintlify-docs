@@ -191,7 +191,7 @@ a.card > div {
 }
 
 #featured-p > p,
-#featured-p.p {
+p#featured-p {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
