@@ -296,6 +296,10 @@ button[aria-controls*="accordion"] {
 .max-w-3xl {
   max-width: 54rem;
 }
+
+a[aria-label="Navigate to header"] {
+  border-bottom: none;
+}
 /* [role="menuitem"]:last-child {
   pointer-events: none;
   cursor: default;
